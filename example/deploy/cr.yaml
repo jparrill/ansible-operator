@@ -1,5 +1,6 @@
-apiVersion: "app.example.com/v1alpha1"
-kind: "Database"
+apiVersion: "tboi.example.com/v1alpha1"
+kind: "Item"
 metadata:
-  name: "example"
+  name: "ansible-operator-poc"
 spec:
+    message: I have a very big operator

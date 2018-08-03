@@ -12,9 +12,10 @@ spec:
       labels:
         name: ansible-operator
     spec:
+      serviceAccountName: ansible-operator-sa
       containers:
         - name: ansible-operator
-          image: docker.io/shurley/busybox-ansible-operator-test
+          image: quay.io/jparrill/ansible-base-operator-app:v1
           command:
           - ansible-operator
           imagePullPolicy: Always
@@ -23,3 +24,5 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
+            - name: OPERATOR_NAME
+              value: "ansible-operator"

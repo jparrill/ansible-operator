@@ -4,7 +4,8 @@ metadata:
   name: ansible-operator
 rules:
 - apiGroups:
-  - app.example.com
+  - items.tboi.example.com
+  - tboi.example.com
   resources:
   - "*"
   verbs:
@@ -30,6 +31,13 @@ rules:
   - statefulsets
   verbs:
   - "*"
+- apiGroups:
+  - extensions
+  resources:
+  - ingresses
+  verbs:
+  - "*"
+
 
 ---
 
@@ -39,7 +47,7 @@ metadata:
   name: default-account-app-operator
 subjects:
 - kind: ServiceAccount
-  name: default
+  name: ansible-operator-sa
 roleRef:
   kind: Role
   name: ansible-operator

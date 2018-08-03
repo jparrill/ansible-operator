@@ -1,6 +1,6 @@
 ---
-- name: Database
+- name: JP-Automation-Operator
   version: v1alpha1
-  group: app.example.com
-  kind: Database
+  group: tboi.example.com
+  kind: Item
   path: /opt/ansible/playbook.yaml
